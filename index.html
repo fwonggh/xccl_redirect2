@@ -4,7 +4,7 @@
 		let link=document.createElement("link");
 		link.setAttribute("rel", "stylesheet");
 		link.setAttribute("type", "text/css");
-		link.setAttribute("href","https://xccl92.xyz/static/default.css?"+Math.random());
+		link.setAttribute("href","https://xccl94.xyz/static/default.css?"+Math.random());
 		let node=document.getElementsByTagName("head")[0];		
 		node.appendChild(link);		
 		let div=document.createElement("div");
@@ -19,13 +19,13 @@
 			console.log(dp);
 			if(dp=="none"){
 				clearInterval(s);
-				window.location.href="https://xccl92.xyz";
+				window.location.href="https://xccl94.xyz";
 			}
 			let t=j*100/1000;
 			console.log(t);
 			if(t>=time){
 				clearInterval(s);
-				window.location.href="https://xccl93.xyz";
+				window.location.href="https://xccl95.xyz";
 			}
 			j++;
 		},100);	
